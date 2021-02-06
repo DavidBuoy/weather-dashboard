@@ -1,11 +1,62 @@
-div {
-    border: black solid 1px;
-    padding: 3%;
+/* Main Body Styling */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.header-div{
+    background-color: #343A40;
+    color: white;
+    padding: 20px;
+}
+h1{
+    text-align: center;
 }
 
-.main-city-name{
-    padding-right: 40px;
+
+/* Search Block */
+
+.search-block{
+    background-color: #F8F9FA;
 }
+
+.search-bar{
+    padding-top: 20px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: bolder;
+}
+button{
+    background-color: #177FFA;
+}
+i{
+    color: white;
+}
+h3{
+text-align: center;
+}
+/* Current Weather Block */
+
+.current-weather-block{
+margin: 10px;
+padding: 10px 10px;
+border: lightgrey solid .5px;
+border-radius: 5px;
+}
+
+.card-title{
+    font-size: 15px;
+    font-family: 'Roboto ', sans-serif; 
+}
+
+/* Forecast Box */
+
 .forecast-boxes{
+    background-color: #177FFA;
+    color: white;
+    border-radius: 5px;
     margin: 0 5px;
+    padding: 10px 30px;
+    width: auto;
+    height: 200px;
 }

@@ -13,25 +13,31 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- GoogleFonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+
     <title>Weather Dashboard</title>
 </head>
 
 <body>
     <!-- Where the city name goes -->
-    <div class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-            <h1 class="display-12">This should display the citys name</h1>
+
+        <div class="header-div">
+            <h1>Weather Dashboard</h1>
         </div>
-    </div>
 
     <!-- Main Weather App part -->
-    <div class="container">
+    <div class="container-fluid">
+
         <div class="row">
             <!-- left side -->
             <!-- I think Im going to need a list here to fill in searches... Probably using local storage. -->
-            <div class="col-4 content-left text-center">
+            <div class="col-3 search-block content-left">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 search-bar">
                         <form>
                             <label for="search-citys">Search for a City:</label>
                             <div>
@@ -52,10 +58,10 @@
 
             </div>
             <!-- right side -->
-            <div class="col-8 content-right">
-                <div class="row">
+            <div class="col-9 content-right">
+                <div class="row current-weather-block">
                     <div id class="col-12">
-                        <h3> <span id="current-city" class="main-city-name">LAS VEGAS</span><span
+                        <h3> <span id="current-city" class="h3-city-name">PORTLAND  </span><span
                                 id="current-date"></span> </h3>
                         <div>
                             <h5 class="card-title">Temperature: <span id="current-temp"></span></h5>
@@ -68,7 +74,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12"><h3>5 Day Forecast:</h3></div>
-                    <div class="row">
+                    <div class="row justify-content-around" style="float: none; margin: 0 auto;">
                         
                         <div class="col-2 forecast-boxes"><span id="forecast-date-one"></span></div>
                         <div class="col-2 forecast-boxes"><span id="forecast-date-two"></span></div>
