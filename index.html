@@ -19,15 +19,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
 
+
     <title>Weather Dashboard</title>
 </head>
 
 <body>
     <!-- Where the city name goes -->
 
-        <div class="header-div">
-            <h1>Weather Dashboard</h1>
-        </div>
+    <div class="header-div">
+        <h1>Weather Dashboard</h1>
+    </div>
 
     <!-- Main Weather App part -->
     <div class="container-fluid">
@@ -61,8 +62,14 @@
             <div class="col-9 content-right">
                 <div class="row current-weather-block">
                     <div id class="col-12">
-                        <h3> <span id="current-city" class="h3-city-name">PORTLAND  </span><span
-                                id="current-date"></span> </h3>
+
+                        <div class="top-weather">
+
+                            <span id="current-city">PORTLAND </span><span id="current-date"></span>
+                            <span><img id="current-icon" src=""></span>
+
+                        </div>
+
                         <div>
                             <h5 class="card-title">Temperature: <span id="current-temp"></span></h5>
                             <h5 class="card-title">Humidity: <span id="current-humidity"></span>%</h5>
@@ -72,15 +79,61 @@
 
                     </div>
                 </div>
+
+                <!-- 5 day forecast -->
+
                 <div class="row">
-                    <div class="col-12"><h3>5 Day Forecast:</h3></div>
+                    <div class="col-12">
+                        <h3>5 Day Forecast:</h3>
+                    </div>
                     <div class="row justify-content-around" style="float: none; margin: 0 auto;">
+                        <!-- DAY 1 -->
+                        <div class="col-2 forecast-boxes">
+                            <span id="forecast-date-one"></span>
+                            <img id="weather-icon-one" src="">
+                            <div>Temp: <span id="forecast-temp-one"></span></div>
+                            <br>
+                            <div>Humidity: <span id="forecast-humid-one"></span></div>
+                        </div>
+                        <!-- DAY 2 -->
+                        <div class="col-2 forecast-boxes">
+                            <span id="forecast-date-two"></span>
+                            <img id="weather-icon-two" src="">
+                            <div>Temp: <span id="forecast-temp-two"></span></div>
+                            <br>
+                            <div>Humidity: <span id="forecast-humid-two"></span></div>
+                        </div>
+                        <!-- DAY 3 -->
+                        <div class="col-2 forecast-boxes">
+                            <span id="forecast-date-three"></span>
+                            <img id="weather-icon-three" src="">
+                            <div>Temp: <span id="forecast-temp-three"></span></div>
+                            <br>
+                            <div>Humidity: <span id="forecast-humid-three"></span></div>
+                        </div>
+                        <!-- DAY 4 -->
+                        <div class="col-2 forecast-boxes">
+                            <span id="forecast-date-four"></span>
+                            <img id="weather-icon-four" src="">
+                            <div>Temp: <span id="forecast-temp-four"></span></div>
+                            <br>
+                            <div>Humidity: <span id="forecast-humid-four"></span></div>
+                        </div>
+                        <!-- Day 5 -->
+                        <div class="col-2 forecast-boxes">
+                            <span id="forecast-date-five"></span>
+                            <img id="weather-icon-five" src="">
+                            <div>Temp: <span id="forecast-temp-five"></span></div>
+                            <br>
+                            <div>Humidity: <span id="forecast-humid-five"></span></div>
+                        </div>
                         
-                        <div class="col-2 forecast-boxes"><span id="forecast-date-one"></span></div>
-                        <div class="col-2 forecast-boxes"><span id="forecast-date-two"></span></div>
-                        <div class="col-2 forecast-boxes"><span id="forecast-date-three"></span></div>
-                        <div class="col-2 forecast-boxes"><span id="forecast-date-four"></span></div>
-                        <div class="col-2 forecast-boxes"><span id="forecast-date-five"></span></div>
+
+
+
+
+
+
 
                     </div>
 

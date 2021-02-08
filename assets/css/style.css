@@ -32,9 +32,11 @@ button{
 i{
     color: white;
 }
-h3{
+.top-weather{
+    font-size: 40px;
 text-align: center;
 }
+
 /* Current Weather Block */
 
 .current-weather-block{
@@ -58,5 +60,5 @@ border-radius: 5px;
     margin: 0 5px;
     padding: 10px 30px;
     width: auto;
-    height: 200px;
+    height: auto;
 }
