@@ -4,23 +4,27 @@ var currentDate = luxon.DateTime.local().toFormat('(MM/dd/yyyy)');
 document.getElementById('current-date').textContent = currentDate;
 
 
-// I COULDNT GET THE SEARCH TO WORK BUT THIS WORKS IF YOU CNAHGE THE CITY NAME.
-testCity = 'Portland';
-
-// CURRENT WEATHER BLOCK
-
 // my key for the Weather API
 var weatherAPIKey = "&units=imperial&appid=8bad128a49d2bfd8cd773b4a9bdd241c";
 var uvIndexKey = "";
+var city = 'Portland';
 
-// This function allows me to display the CURRENT TEMPS ON THE MAIN BOX
+
+
+
+
+
+
+
+// CURRENT WEATHER BLOCK
+// This function allows me to display the CURRENT TEMPS ON THE MAIN BLOCK
 function updateDisplay(weatherData) {
+
     var currentTemp = weatherData.main.temp;
     var currentHumidity = weatherData.main.humidity;
     var currentWind = weatherData.wind.speed;
     var currentIcon = 'https://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '.png'
     
-
     document.getElementById('current-temp').textContent = currentTemp;
     document.getElementById('current-humidity').textContent = currentHumidity;
     document.getElementById('current-wind').textContent = currentWind;
@@ -31,10 +35,9 @@ function updateDisplay(weatherData) {
 
 // This grabs the current weather
 // Postman
-fetch('https://api.openweathermap.org/data/2.5/weather?q=' + testCity + weatherAPIKey)
+fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + weatherAPIKey)
     .then(response => response.json())
     .then(data => {
-        // THIS LOGS ALL THE DATA AND THE TESTING THE TEMP
         // console.log(data);
         // console.log(data.main.temp);
         if (data) {
@@ -45,25 +48,17 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + testCity + weatherA
     });
 
 
-// FORECAST BLOCKS
 
+
+
+
+
+// FORECAST BLOCKS
 // This Function is what grabs i think the future forcast. (Walk Through with dan before class)
 function updateForecastDisplay(forecastData) {
     forecastData = JSON.parse(forecastData);
         // console.log(forecastData);
 
-
-
-    
-    var futureDateTwo = luxon.DateTime.local().plus({ days: 2 }).toFormat('MM/dd/yyyy');
-    var futureDateThree = luxon.DateTime.local().plus({ days: 3 }).toFormat('MM/dd/yyyy');
-    var futureDateFour = luxon.DateTime.local().plus({ days: 4 }).toFormat('MM/dd/yyyy');
-    var futureDateFive = luxon.DateTime.local().plus({ days: 5 }).toFormat('MM/dd/yyyy');
-
-    document.getElementById('forecast-date-two').textContent = futureDateTwo;
-    document.getElementById('forecast-date-three').textContent = futureDateThree;
-    document.getElementById('forecast-date-four').textContent = futureDateFour;
-    document.getElementById('forecast-date-five').textContent = futureDateFive;
     
 // DAY BLOCK ONE
     var futureDateOne = luxon.DateTime.local().plus({ days: 1 }).toFormat('MM/dd/yyyy');
@@ -120,10 +115,8 @@ function updateForecastDisplay(forecastData) {
     document.getElementById('forecast-temp-five').textContent = boxFiveTemps;
     document.getElementById('forecast-humid-five').textContent = boxFiveHumid;
 
-
-    return
+    return;
 };
-
 
 
 function weatherForcast(cityId) {
@@ -145,7 +138,13 @@ function weatherForcast(cityId) {
 
 
 
+var searchBTN = document.getElementById("search-button");
+searchBTN.addEventListener("click", getQuery);
 
 
-
-
+function getQuery(event) {
+    event.preventDefault();
+    var searchText = document.getElementById("city-name").value;
+    console.log(searchText);
+    updateForecastDisplay(searchText);
+};
